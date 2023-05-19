@@ -6,7 +6,7 @@
 matriz = [[],[],[]]
 coluna = 1
 linha = 1
-soma = soma_segunda = 0
+soma = terceira_coluna = 0
 
 
 for l in range(3):
@@ -22,6 +22,7 @@ for l in range(3):
         linha+=1
         for o in range(1):
             terceiro = int(input(f'Escolha um numero para ({coluna},{linha}): '))
+            terceira_coluna += terceiro 
             linha = 1
 
     matriz[l].append(primeiro)  
@@ -34,10 +35,7 @@ for i in matriz:
         if c % 2==0:
             soma +=c
 print(f'A soma de todos os pares é {soma}')
-
-for i in matriz[2]:
-    soma_segunda += i
-print(f'A soma da terceira linha é {soma_segunda}')
+print(f'A soma da terceira coluna é {terceira_coluna}')
 print(f'O maior valor da segunda linha é {max(matriz[1])}')
 
 
