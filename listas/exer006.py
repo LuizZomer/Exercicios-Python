@@ -1,41 +1,47 @@
 pessoas = []
 dados = []
 leves = []
-pesadas = []
-
-
+pesados = []
+cont = 0
 
 while True:
     dados.append(input('Nome: '))
-    dados.append(float(input('peso: ')))
+    dados.append(int(input('peso: ')))
     pessoas.append(dados[:])
-    dados.clear()
-    continuar = input('Deseja continuar[S/N]: ').lower()
+
+    if len(pessoas) == 1:
+        leves.append(dados[:])
+        pesados.append(dados[:])
+    
+    else:
+        if pessoas[cont][1] > pesados[0][1]:
+            pesados.clear()
+            pesados.append(dados[:])
+        
+        elif pessoas[cont][1] == pesados[0][1]:
+            pesados.append(dados[:])
+        
+        if pessoas[cont][1] < leves[0][1]:
+            leves.clear()
+            leves.append(dados[:])
+
+        elif pessoas[cont][1] == leves[0][1]:
+            leves.append(dados[:])
+
+    continuar = input('Continuar[s/n]: ').lower()
     if continuar == 'n':
         break
-
-maior = pessoas[0][1]
-menor = pessoas[0][1]
-
-for pessoa in pessoas:
-  
-    if pessoa[1] >= maior:
-        maior = pessoa[1]
-        pesadas.append(pessoa[0])
-        
+    cont +=1
+    dados.clear()
     
-    if pessoa[1] <= menor:
-        menor = pessoa[1]
-        leves.append(pessoa[0]) 
-        
+print(len(pessoas))
 
+for pessoas in leves:
+    print(pessoas[0], end=',')
+print('Foram os mais leves com ',leves[0][1] )
 
-print(f'Foram registrados {len(pessoas)} pessoas')
-for leve in leves:
-    print(leve, end=",")
-print(f'Foram os mais leves com {menor} kilos')
-for p in pesadas:
-    print(p,end=",")
-print(f'Esse foram os mais pesados com {maior} kilos')
+for pessoas in pesados:
+    print(pessoas[0], end=',')
+print('Foram os mais leves com ',pesados[0][1] )
 
 
