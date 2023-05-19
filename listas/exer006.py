@@ -6,7 +6,7 @@ cont = 0
 
 while True:
     dados.append(input('Nome: '))
-    dados.append(int(input('peso: ')))
+    dados.append(float(input('peso: ')))
     pessoas.append(dados[:])
 
     if len(pessoas) == 1:
