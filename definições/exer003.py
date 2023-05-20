@@ -4,8 +4,12 @@
 # c) uma contagem personalizada    
 
 def contagem(c,f,p=1):
-    for c in range(c,f+1,p):
-        print(c)
+    if c < f:
+        for c in range(c,f+1,p):
+            print(c)
+    else:
+        for c in range(c,f -1,-p):
+            print(c)
 
 # contagem(1,10)
 # print()
