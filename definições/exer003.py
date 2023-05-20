@@ -6,6 +6,12 @@
 from time import sleep
 
 def contagem(c,f,p=1):
+    if p < 0:
+        p *= -1
+        print('Passo não pode ser menor que 1, seu numero ficará positivo')
+    if p == 0:
+        p = 1
+        print('Passo não pode ser zero, ele irá ser trocado por 1')
     if c < f:
         for c in range(c,f+1,p):
             print(c, end=" ")
