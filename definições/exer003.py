@@ -3,13 +3,18 @@
 # b) de 10 até 0, de 2 em 2
 # c) uma contagem personalizada    
 
+from time import sleep
+
 def contagem(c,f,p=1):
     if c < f:
         for c in range(c,f+1,p):
-            print(c)
+            print(c, end=" ")
+            sleep(0.5)
     else:
         for c in range(c,f -1,-p):
-            print(c)
+            print(c, end=" ")
+            sleep(0.5)
+    print('FIM')
 
 # contagem(1,10)
 # print()
