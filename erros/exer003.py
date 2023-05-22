@@ -1,4 +1,12 @@
 from time import sleep
+from arquivo import *
+
+arq = 'banco.txt'
+
+if arquivoexiste(arq):
+    print('Arquivo encontrado')
+else:
+    print('Não existe')
 
 def menu():
     titulo('Menu pricipal')
